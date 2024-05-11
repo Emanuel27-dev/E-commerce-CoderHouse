@@ -5,11 +5,11 @@
 }
 
 body {
-    /* background-color: steelblue; */
     color: rgb(214, 211, 211);
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 18px;
 }
