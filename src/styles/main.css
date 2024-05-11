@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: steelblue; */
+    color: rgb(214, 211, 211);
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
