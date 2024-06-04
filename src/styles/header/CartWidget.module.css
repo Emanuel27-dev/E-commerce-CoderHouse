@@ -1,0 +1,28 @@
+.cart {
+    position: relative;
+}
+
+.cartIcon {
+    font-size: 21px;
+}
+
+.circle {
+    background-color: rgb(235, 41, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 600;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    bottom: 18px;
+    left: 17px;
+    font-size: 14px;
+}
+
+@media all and (width < 676px) {
+    .cart {
+        display: none;
+    }
+}

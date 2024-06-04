@@ -1,0 +1,26 @@
+[
+    {
+        "id":"pc",
+        "name":"PC"
+    },
+    {
+        "id":"playstation4",
+        "name":"PlayStation 4"
+    },
+    {
+        "id":"xbox-one",
+        "name":"Xbox One"
+    },
+    {
+        "id":"nintendo-switch",
+        "name":"Nintendo Switch"
+    },
+    {
+        "id":"ios",
+        "name":"iOS"
+    },
+    {
+        "id":"android",
+        "name":"Android"
+    }
+]
