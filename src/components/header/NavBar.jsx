@@ -16,7 +16,12 @@ export const NavBar = () => {
         <ul className={style.platforms}>
           {platforms.map(({ id, name }) => (
             <li key={id}>
-              <NavLink to={`/category/${id}`}>{name}</NavLink>
+              <NavLink
+                to={`/category/${id}`}
+                className={({ isActive }) => (isActive ? "active" : undefined)}
+              >
+                {name}
+              </NavLink>
             </li>
           ))}
         </ul>

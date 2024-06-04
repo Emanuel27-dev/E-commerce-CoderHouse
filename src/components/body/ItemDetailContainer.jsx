@@ -64,7 +64,7 @@ export const ItemDetailContainer = () => {
           </section>
         </div>
       ) : (
-        <Loading />
+        <Loading type={'spin'}/>
       )}
     </>
   );

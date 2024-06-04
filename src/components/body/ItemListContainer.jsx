@@ -29,12 +29,11 @@ export const ItemListContainer = () => {
     });
   }, [plataforma]);
 
-
   return (
     <section className="container">
       <div className={style.gridContainer}>
         {games.length === 0 ? (
-          <Loading />
+          <Loading type={"spin"} />
         ) : (
           games.map(
             ({
@@ -42,7 +41,7 @@ export const ItemListContainer = () => {
               name,
               background_image,
               playtime, // considerare este campo como el precio, ya que la API no brinda los precios para los juegos.
-              platforms
+              platforms,
             }) => (
               <Item
                 key={id}
