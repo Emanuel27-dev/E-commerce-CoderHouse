@@ -1,7 +1,7 @@
 .detail {
     display: flex;
     gap: 1.8em;
-    margin-top: 6rem;
+    margin-top: 4rem;
     padding-bottom: 2em;
     /* background-color: cadetblue; */
 }
@@ -17,6 +17,7 @@
     height: 100%;
     display: block;
     object-fit: cover;
+    object-position: center;
 }
 
 .texts {
@@ -33,6 +34,22 @@
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: .5em;
+    /* border: 1px solid; */
+    max-height: 340px;
+    overflow: hidden;
+}
+
+.readMoreLess {
+    display: inline-block;
+    cursor: pointer;
+    color: rgba(255, 166, 0, 0.911);
+    border-bottom: 1px solid;
+    margin-bottom: 1em;
+}
+
+.paragraphModified {
+    overflow: initial;
+    max-height: none;
 }
 
 .cont {
@@ -48,29 +65,13 @@
 .price {
     display: block;
     font-size: 1.6em;
-    margin-bottom: .5em;
+    margin-bottom: .7em;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     gap: .7em;
-}
-
-.buttonBuy {
-    background-color: rgb(20, 125, 230);
-    display: block;
-    padding: 14px 20px;
-    text-align: center;
-    border-radius: .3em;
-    border: 1px solid var(--color-text-main);
-    font-weight: 500;
-    max-width: 220px;
-    transition: background-color .4s;
-}
-
-.buttonBuy:hover {
-    background-color: rgb(56, 151, 247);
 }
 
 .button {
@@ -87,6 +88,16 @@
 .button:hover {
     background-color: rgba(70, 67, 67, 0.938);
 }
+
+.buttonBuy {
+    background-color: rgb(20, 125, 230);
+    composes: button; /* heredando todos los estilos de la clase .button */
+}
+
+.buttonBuy:hover {
+    background-color: rgb(56, 151, 247);
+}
+
 
 /* Media querie para que no se vea espantoso en celu ✌ */
 @media all and (width < 1000px) {

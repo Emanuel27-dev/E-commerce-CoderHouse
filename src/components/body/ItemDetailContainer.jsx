@@ -1,14 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getGameDetail } from "../../getData";
 import { Loading } from "./Loading";
 import style from "../../styles/body/ItemDetailContainer.module.css";
 import { iconsComponents } from "../../iconsComponents";
 
-
 export const ItemDetailContainer = () => {
   const [gameDetail, setGameDetail] = useState();
+  const paragraphRef = useRef(); // referenciando el parrafo para expandir el texto
   const { gameId } = useParams(); // obteniendo el id del juego
+
+  const handleText = (e) => {
+    // agregando una clase modificadora para que el resto de la descripcion se pueda ver.
+    paragraphRef.current.classList.toggle(`${style.paragraphModified}`);
+    if (e.target.textContent === "... leer mas") {
+      e.target.textContent = "... leer menos";
+    } else {
+      e.target.textContent = "... leer mas";
+    }
+  };
 
   useEffect(() => {
     // obteniendo los datos del juego en especifico
@@ -28,7 +38,12 @@ export const ItemDetailContainer = () => {
             </figure>
             <div className={style.texts}>
               <h1 className={style.nameGame}>{gameDetail.name}</h1>
-              <p className={style.paragraph}>{gameDetail.description_raw}</p>
+              <p className={style.paragraph} ref={paragraphRef}>
+                {gameDetail.description_raw}
+              </p>
+              <span className={style.readMoreLess} onClick={handleText}>
+                ... leer mas
+              </span>
               <div className={style.cont}>
                 <span className={style.price}>
                   US${gameDetail.playtime * 2}.99
@@ -64,7 +79,7 @@ export const ItemDetailContainer = () => {
           </section>
         </div>
       ) : (
-        <Loading type={'spin'}/>
+        <Loading type={"spin"} />
       )}
     </>
   );
