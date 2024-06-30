@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getGames } from "../../getData";
-import { Item } from "./Item";
 import { useParams } from "react-router-dom";
 import { Loading } from "./Loading";
 import style from "../../styles/body/ItemListContainer.module.css";
+import { ItemList } from "./ItemList";
 
 export const ItemListContainer = () => {
   // games: es un arreglo donde almacenara objetos y estos tendran informacion del juego respectivo
@@ -35,24 +35,7 @@ export const ItemListContainer = () => {
         {games.length === 0 ? (
           <Loading type={"spin"} />
         ) : (
-          games.map(
-            ({
-              id,
-              name,
-              background_image,
-              playtime, // considerare este campo como el precio, ya que la API no brinda los precios para los juegos.
-              platforms,
-            }) => (
-              <Item
-                key={id}
-                id={id}
-                name={name}
-                image={background_image}
-                price={playtime}
-                arrayPlatforms={platforms} // este arreglo contiene las plataformas en las cuales esta disponible el juego
-              />
-            )
-          )
+          <ItemList games={games}/>
         )}
       </div>
     </section>

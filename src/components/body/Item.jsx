@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import style from "./../../styles/body/Item.module.css";
 import { iconsComponents } from "../../iconsComponents";
 
-
 export const Item = ({ id, name, image, price, arrayPlatforms }) => {
   return (
     <Link to={`/item/${id}`}>
@@ -17,10 +16,10 @@ export const Item = ({ id, name, image, price, arrayPlatforms }) => {
               {
                 // La logica es similar al del componente ItemDetailContainer
                 arrayPlatforms
-                  .map(({ platform }) => {
+                  ?.map(({ platform }) => {
                     return platform.slug;
                   })
-                  .map((platformKey) => {
+                  ?.map((platformKey) => {
                     if (iconsComponents[platformKey]) {
                       return iconsComponents[platformKey];
                     }

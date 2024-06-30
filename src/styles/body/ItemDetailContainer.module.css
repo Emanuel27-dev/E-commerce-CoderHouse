@@ -81,7 +81,7 @@
     border-radius: .3em;
     border: 1px solid var(--color-text-main);
     font-weight: 500;
-    max-width: 220px;
+    max-width: 201px;
     transition: background-color .4s;
 }
 
@@ -96,6 +96,13 @@
 
 .buttonBuy:hover {
     background-color: rgb(56, 151, 247);
+}
+
+
+.addbuttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
